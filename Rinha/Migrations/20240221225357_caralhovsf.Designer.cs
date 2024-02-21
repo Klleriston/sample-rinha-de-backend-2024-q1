@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using RINHABACKEND.Data;
@@ -11,9 +12,11 @@ using RINHABACKEND.Data;
 namespace Rinha.Migrations
 {
     [DbContext(typeof(Databasecontext))]
-    partial class DatabasecontextModelSnapshot : ModelSnapshot
+    [Migration("20240221225357_caralhovsf")]
+    partial class caralhovsf
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -115,11 +118,13 @@ namespace Rinha.Migrations
 
             modelBuilder.Entity("RINHABACKEND.Model.Transacao", b =>
                 {
-                    b.HasOne("RINHABACKEND.Model.Saldo", null)
+                    b.HasOne("RINHABACKEND.Model.Saldo", "Saldo")
                         .WithMany("Transacoes")
                         .HasForeignKey("SaldoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Saldo");
                 });
 
             modelBuilder.Entity("RINHABACKEND.Model.Saldo", b =>

@@ -38,9 +38,9 @@ public class ClienteController : ControllerBase
             {
                 total = saldo.Total,
                 data_extrato = saldo.Data_extrato,
-                limite = saldo.limite
+                limite = saldo.Limite
             },
-            ultimas_transacoes = saldo.Transacao
+            ultimas_transacoes = saldo.Transacoes
         };
 
         return Ok(json);
@@ -57,6 +57,6 @@ public class ClienteController : ControllerBase
 
         Saldo saldo = _contaService.CriarTransacao(id, transacao);
 
-        return Ok(new { limite = saldo.limite, saldo = saldo.Total });
+        return Ok(new { limite = saldo.Limite, saldo = saldo.Total });
     }
 }

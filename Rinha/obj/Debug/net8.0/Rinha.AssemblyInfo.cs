@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Rinha")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea3bdbbbf7bffea12bcef53c62b7deffba4cb17e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d823f0393196faf926e3497d4939e38f9f8e695b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Rinha")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Rinha")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

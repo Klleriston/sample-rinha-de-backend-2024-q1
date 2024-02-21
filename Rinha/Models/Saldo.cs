@@ -4,16 +4,16 @@ namespace RINHABACKEND.Model
 {
     public class Saldo
     {
-        public int Id { get; set; }
-        [Required]
-      
-        public Transacao Transacao { get; set; }
-        [Required]
+         public int Id { get; set; }
+        public List<Transacao> Transacoes { get; set; }
         public int Total { get; set; }
-        [Required]
-        public DateTime Data_extrato { get; set; }
-        [Required]
-        public int limite { get; set; }
+        public string Data_extrato => DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss.ffffffZ");
+        public int Limite { get; set; }
+
+        public Saldo()
+        {
+            Transacoes = new List<Transacao>();
+        }
 
     }
 }
