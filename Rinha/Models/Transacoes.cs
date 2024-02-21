@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace RINHABACKEND.Model
 {
     public class Transacao
@@ -7,13 +9,15 @@ namespace RINHABACKEND.Model
         public string Tipo { get; set; }
         public string Descricao { get; set; }
         public DateTime Realizada_em { get; set; }
-
-        public Transacao(int valor, string tipo, string descricao, DateTime realizada_em)
+        [ForeignKey("Saldo")]
+        public int SaldoId { get; set; }
+        public Saldo Saldo { get; set; }
+        public Transacao(int SaldoID, int valor, string tipo, string descricao, DateTime realizada_em)
         {
             Valor = valor;
             Tipo = tipo;
             Descricao = descricao;
-            Realizada_em = realizada_em;
+            Realizada_em = realizada_em.ToUniversalTime(); ;
         }
     }
 }

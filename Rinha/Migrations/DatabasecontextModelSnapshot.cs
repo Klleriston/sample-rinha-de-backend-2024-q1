@@ -48,36 +48,36 @@ namespace Rinha.Migrations
                         {
                             Id = 1,
                             Data_extrato = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Total = 0,
+                            Total = -9098,
                             limite = 100000
                         },
                         new
                         {
                             Id = 2,
                             Data_extrato = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Total = 0,
+                            Total = 1000,
                             limite = 80000
                         },
                         new
                         {
                             Id = 3,
                             Data_extrato = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Total = 0,
+                            Total = 2000,
                             limite = 1000000
                         },
                         new
                         {
                             Id = 4,
                             Data_extrato = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Total = 0,
+                            Total = 120,
                             limite = 10000000
                         },
                         new
                         {
                             Id = 5,
                             Data_extrato = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Total = 0,
-                            limite = 500000
+                            Total = 3,
+                            limite = 200
                         });
                 });
 
@@ -99,8 +99,9 @@ namespace Rinha.Migrations
                     b.Property<int?>("SaldoId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("Tipo")
-                        .HasColumnType("integer");
+                    b.Property<string>("Tipo")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<int>("Valor")
                         .HasColumnType("integer");

@@ -32,7 +32,18 @@ public class ClienteController : ControllerBase
             return NotFound("Cliente não encontrado.");
         }
 
-        return Ok(saldo);
+        var json = new
+        {
+            saldo = new
+            {
+                total = saldo.Total,
+                data_extrato = saldo.Data_extrato,
+                limite = saldo.limite
+            },
+            ultimas_transacoes = saldo.Transacao
+        };
+
+        return Ok(json);
     }
 
     [HttpPost]

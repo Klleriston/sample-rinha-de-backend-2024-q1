@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\klleriston_calriz\\Documents\\Rinha\\rinha\\Rinha.csproj": {}
+    "C:\\Users\\klleriston_calriz\\Documents\\rinha-de-backend-2024-q1\\Rinha\\Rinha.csproj": {}
   },
   "projects": {
-    "C:\\Users\\klleriston_calriz\\Documents\\Rinha\\rinha\\Rinha.csproj": {
+    "C:\\Users\\klleriston_calriz\\Documents\\rinha-de-backend-2024-q1\\Rinha\\Rinha.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\klleriston_calriz\\Documents\\Rinha\\rinha\\Rinha.csproj",
+        "projectUniqueName": "C:\\Users\\klleriston_calriz\\Documents\\rinha-de-backend-2024-q1\\Rinha\\Rinha.csproj",
         "projectName": "Rinha",
-        "projectPath": "C:\\Users\\klleriston_calriz\\Documents\\Rinha\\rinha\\Rinha.csproj",
+        "projectPath": "C:\\Users\\klleriston_calriz\\Documents\\rinha-de-backend-2024-q1\\Rinha\\Rinha.csproj",
         "packagesPath": "C:\\Users\\klleriston_calriz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\klleriston_calriz\\Documents\\Rinha\\rinha\\obj\\",
+        "outputPath": "C:\\Users\\klleriston_calriz\\Documents\\rinha-de-backend-2024-q1\\Rinha\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\klleriston_calriz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -79,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

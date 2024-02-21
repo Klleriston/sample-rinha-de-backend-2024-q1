@@ -18,30 +18,30 @@ namespace RINHABACKEND.Services
             return conta!;
         }
 
-        public void CriarConta(Saldo saldo)
-        {
-            _databasecontext.Add(saldo);
-            _databasecontext.SaveChanges();
-        }
 
         public Saldo CriarTransacao(int id, Transacao transacao)
         {
             var saldo = _databasecontext.Saldos.FirstOrDefault(c => c.Id == id);
 
-            int novoTotal = transacao.Tipo == "c"
-            ? saldo.Total + (int)(transacao.Valor * 100)
-            : saldo.Total - (int)(transacao.Valor * 100);
+            if (transacao.Tipo == "c")
+            {
+                int novoTotal = saldo.limite - transacao.Valor;
+                saldo.limite = novoTotal;
 
-            saldo.Total = novoTotal;
+                _databasecontext.SaveChanges();
+                return saldo;
+            } else if (transacao.Tipo == "d")
+            {
+                int novoTotal = saldo.Total -= transacao.Valor;
+                saldo.Total = novoTotal;
 
-            _databasecontext.SaveChanges();
-            return saldo;
+                _databasecontext.SaveChanges();
+                return saldo;
+            } else
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public void AtualizarSaldo(Saldo saldo)
-        {
-            _databasecontext.Update(saldo);
-            _databasecontext.SaveChanges();
-        }
     };
 }

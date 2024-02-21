@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QMJc/pzMbDlvAsVMDmhz+CZuu54hRzjHELTq7+Wsu8BGF9mY5Ba+rVycyDgSdro/E1JL+91PTpfniyuhUpVtEA==",
+  "dgSpecHash": "z9T6I0+DRjV7NA6D8kvJ/XVzvAYiBttvG5ZtbCCpMQU53GKYw9AumChCeAZJsXro3rYIcPZ93tZYxWl0nThWTw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\klleriston_calriz\\Documents\\Rinha\\rinha\\Rinha.csproj",
+  "projectFilePath": "C:\\Users\\klleriston_calriz\\Documents\\rinha-de-backend-2024-q1\\Rinha\\Rinha.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\klleriston_calriz\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\klleriston_calriz\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
