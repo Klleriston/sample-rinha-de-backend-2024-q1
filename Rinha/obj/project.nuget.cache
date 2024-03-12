@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "z9T6I0+DRjV7NA6D8kvJ/XVzvAYiBttvG5ZtbCCpMQU53GKYw9AumChCeAZJsXro3rYIcPZ93tZYxWl0nThWTw==",
+  "dgSpecHash": "ob83xhTYx168ktJF0uyIdF+ePF1pirF8WiJUIASvBJRqZWCfGPFdD+PAHDtPo94aCWDja3/+XxxCfvLYBYi9fA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\klleriston_calriz\\Documents\\rinha-de-backend-2024-q1\\Rinha\\Rinha.csproj",
+  "projectFilePath": "C:\\Users\\klleriston_calriz\\Dev\\rinha-de-backend-2024-q1\\Rinha\\Rinha.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\klleriston_calriz\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\klleriston_calriz\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
@@ -29,6 +29,7 @@
     "C:\\Users\\klleriston_calriz\\.nuget\\packages\\microsoft.extensions.options\\8.0.0\\microsoft.extensions.options.8.0.0.nupkg.sha512",
     "C:\\Users\\klleriston_calriz\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "C:\\Users\\klleriston_calriz\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\klleriston_calriz\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.5\\microsoft.visualstudio.azure.containers.tools.targets.1.19.5.nupkg.sha512",
     "C:\\Users\\klleriston_calriz\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\klleriston_calriz\\.nuget\\packages\\npgsql\\8.0.0\\npgsql.8.0.0.nupkg.sha512",
     "C:\\Users\\klleriston_calriz\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\8.0.0\\npgsql.entityframeworkcore.postgresql.8.0.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\klleriston_calriz\\Documents\\rinha-de-backend-2024-q1\\Rinha\\Rinha.csproj": {}
+    "C:\\Users\\klleriston_calriz\\Dev\\rinha-de-backend-2024-q1\\Rinha\\Rinha.csproj": {}
   },
   "projects": {
-    "C:\\Users\\klleriston_calriz\\Documents\\rinha-de-backend-2024-q1\\Rinha\\Rinha.csproj": {
+    "C:\\Users\\klleriston_calriz\\Dev\\rinha-de-backend-2024-q1\\Rinha\\Rinha.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\klleriston_calriz\\Documents\\rinha-de-backend-2024-q1\\Rinha\\Rinha.csproj",
+        "projectUniqueName": "C:\\Users\\klleriston_calriz\\Dev\\rinha-de-backend-2024-q1\\Rinha\\Rinha.csproj",
         "projectName": "Rinha",
-        "projectPath": "C:\\Users\\klleriston_calriz\\Documents\\rinha-de-backend-2024-q1\\Rinha\\Rinha.csproj",
+        "projectPath": "C:\\Users\\klleriston_calriz\\Dev\\rinha-de-backend-2024-q1\\Rinha\\Rinha.csproj",
         "packagesPath": "C:\\Users\\klleriston_calriz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\klleriston_calriz\\Documents\\rinha-de-backend-2024-q1\\Rinha\\obj\\",
+        "outputPath": "C:\\Users\\klleriston_calriz\\Dev\\rinha-de-backend-2024-q1\\Rinha\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\klleriston_calriz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -50,6 +50,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.1, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.19.5, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",

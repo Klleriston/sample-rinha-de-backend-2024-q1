@@ -1,20 +1,16 @@
-version: "3.5"
+version: "3.4"
 
 services:
   api01: &api
-    # Lembre-se de que seu serviço HTTP deve estar hospedado num repositório
-    # publicamente acessível! Ex.: hub.docker.com
-    image: rinha
+    build:
+      context: .
+      dockerfile: Dockerfile
     hostname: api01
     environment:
-      # - ASPNETCORE_ENVIRONMENT = Development
-      - PostgreSQL= Server=db; Port=5432;Database=agoravaicaralho;Username=postgres; Password=root;Trust Server Certificate=true;;Minimum Pool Size=50;Maximum Pool Size=2000;Multiplexing=true;Timeout=15;Command Timeout=15;Cancellation Timeout=-1;No Reset On Close=true;Max Auto Prepare=20;Auto Prepare Min Usages=1
-    
-    # Não é necessário expor qualquer porta além da porta do load balancer,
-    # mas é comum as pessoas o fazerem para testarem suas APIs e conectarem
-    # ao banco de dados na fase de desenvolvimento.
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings:connect=Host=postgres;Port=5432;Database=postgres;Username=postgres;Password=root;
     ports:
-      - "8081:8080"
+      - "8081:80"
     depends_on:
       - db
     deploy:
@@ -22,16 +18,13 @@ services:
         limits:
           cpus: "0.3"
           memory: "110MB"
+   
 
   api02:
-    # Essa sintaxe reusa o que foi declarado em 'api01'.
-    <<: *api 
+    <<: *api
     hostname: api02
-    environment:
-      # - ASPNETCORE_ENVIRONMENT = Development
-      - PostgreSQL= Server=db; Port=5432;Database=agoravaicaralho;Username=postgres; Password=root;Trust Server Certificate=true;;Minimum Pool Size=50;Maximum Pool Size=2000;Multiplexing=true;Timeout=15;Command Timeout=15;Cancellation Timeout=-1;No Reset On Close=true;Max Auto Prepare=20;Auto Prepare Min Usages=1
     ports:
-      - "8082:8080"
+      - "8082:80"
  
   nginx:
     image: nginx:latest
@@ -41,7 +34,6 @@ services:
       - api01
       - api02
     ports:
-        # Obrigatório expor/usar a porta 9999 no load balancer!
       - "9999:9999" 
     deploy:
       resources:
@@ -65,19 +57,9 @@ services:
     deploy:
       resources:
         limits:
-          # Note que a soma de todos os limites dos serviços
-          # aqui declarados é de 1.5 unidades de CPU e 550MB
-          # de memória. A distribuição feita aqui é apenas
-          # um exemplo – distribua como quiser.
           cpus: "0.7"
           memory: "310MB"
 
-# O uso do modo `bridge` deve ser adequado à carga que será usada no teste.
-# A edição anterior se beneficiou do modo host pois o volume de requisições
-# era relativamente alto e a virtualização da rede se tornou um gargalo, mas
-# este modo é mais complexo de ser configurado. Fique à vontade para usar o
-# modo que quiser desde que não conflite com portas trivialmente usadas em um
-# SO.
 networks:
   default:
     driver: bridge

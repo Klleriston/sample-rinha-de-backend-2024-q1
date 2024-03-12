@@ -1,0 +1,149 @@
+name: dockercompose17509644109495876911
+services:
+  api01:
+    build:
+      context: C:\Users\klleriston_calriz\Dev\rinha-de-backend-2024-q1
+      dockerfile: Dockerfile
+    depends_on:
+      db:
+        condition: service_started
+        required: true
+    deploy:
+      resources:
+        limits:
+          cpus: "0.3"
+          memory: "115343360"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+      ConnectionStrings:connect: Host=postgres;Port=5432;Database=postgres;Username=postgres;Password=root;
+    hostname: api01
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "8081"
+        protocol: tcp
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\klleriston_calriz\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\klleriston_calriz\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+  api02:
+    build:
+      context: C:\Users\klleriston_calriz\Dev\rinha-de-backend-2024-q1
+      dockerfile: Dockerfile
+    depends_on:
+      db:
+        condition: service_started
+        required: true
+    deploy:
+      resources:
+        limits:
+          cpus: "0.3"
+          memory: "115343360"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings:connect: Host=postgres;Port=5432;Database=postgres;Username=postgres;Password=root;
+    hostname: api02
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "8082"
+        protocol: tcp
+  db:
+    command:
+      - postgres
+      - -c
+      - max_connections=300
+      - -c
+      - shared_buffers=96MB
+      - -c
+      - checkpoint_timeout=600
+      - -c
+      - synchronous_commit=off
+      - -c
+      - fsync=off
+      - -c
+      - full_page_writes=off
+      - -c
+      - work_mem=16MB
+    deploy:
+      resources:
+        limits:
+          cpus: "0.7"
+          memory: "325058560"
+    environment:
+      POSTGRES_DB: agoravaicaralho
+      POSTGRES_PASSWORD: root
+      POSTGRES_USER: postgres
+    hostname: db
+    image: postgres:latest
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 5432
+        published: "5432"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\klleriston_calriz\Dev\rinha-de-backend-2024-q1\script.sql
+        target: /docker-entrypoint-initdb.d/script.sql
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\klleriston_calriz\Dev\rinha-de-backend-2024-q1\cria_transacao.sql
+        target: /docker-entrypoint-initdb.d/cria_transacao.sql
+        bind:
+          create_host_path: true
+  nginx:
+    depends_on:
+      api01:
+        condition: service_started
+        required: true
+      api02:
+        condition: service_started
+        required: true
+    deploy:
+      resources:
+        limits:
+          cpus: "0.2"
+          memory: "20971520"
+    image: nginx:latest
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 9999
+        published: "9999"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\klleriston_calriz\Dev\rinha-de-backend-2024-q1\nginx.conf
+        target: /etc/nginx/nginx.conf
+        read_only: true
+        bind:
+          create_host_path: true
+networks:
+  default:
+    name: rinha-nginx-2024q1
+    driver: bridge
