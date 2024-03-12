@@ -1,8 +1,8 @@
 # Use este script para executar testes locais
 
-$RESULTS_WORKSPACE = "\Users\klleriston_calriz\Downloads\gatling-charts-highcharts-bundle-3.10.4-bundle\gatling-charts-highcharts-bundle-3.10.4\results"
-$GATLING_BIN_DIR = "C:\Users\klleriston_calriz\Downloads\gatling-charts-highcharts-bundle-3.10.4-bundle\gatling-charts-highcharts-bundle-3.10.4\bin"
-$GATLING_WORKSPACE = "C:\Users\klleriston_calriz\Downloads\gatling-charts-highcharts-bundle-3.10.4-bundle\gatling-charts-highcharts-bundle-3.10.4\user-files"
+$RESULTS_WORKSPACE = "zzz"
+$GATLING_BIN_DIR = "zzz"
+$GATLING_WORKSPACE = "zzz"
 
 function Run-Gatling {
     & "$GATLING_BIN_DIR\gatling.bat" -rm local -s RinhaBackendCrebitosSimulation `
